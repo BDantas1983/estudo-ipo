@@ -1,0 +1,21 @@
+# Arquivos compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+.env
+.venv
+env/
+venv/
+
+# PDFs (conforme solicitado pelo usuário)
+*.pdf
+
+# Uploads temporários locais
+uploads/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db

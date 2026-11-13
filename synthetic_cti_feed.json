@@ -1,0 +1,57 @@
+{
+    "type": "bundle",
+    "id": "bundle--f23b6882-b3c5-4275-b187-1921c3ee432a",
+    "objects": [
+        {
+            "type": "threat-actor",
+            "spec_version": "2.1",
+            "id": "threat-actor--de0d9dac-f4cb-47dd-9f01-881e2dfbe8c7",
+            "created": "2026-11-06T03:42:08.335158Z",
+            "modified": "2026-11-06T03:42:08.335158Z",
+            "name": "APT-Python-Group",
+            "description": "Grupo sint\u00e9tico criado para estudos de CTI.",
+            "threat_actor_types": [
+                "nation-state"
+            ],
+            "aliases": [
+                "Ghost-Python"
+            ],
+            "primary_motivation": "organizational-gain"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--1705f524-f7d8-47ca-aabc-a77737b79098",
+            "created": "2026-11-06T03:42:08.335736Z",
+            "modified": "2026-11-06T03:42:08.335736Z",
+            "name": "Emotet-Clone",
+            "malware_types": [
+                "ransomware",
+                "trojan"
+            ],
+            "is_family": true
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fd5c4dcc-7b88-4d12-a863-dc8263e53278",
+            "created": "2026-11-06T03:42:08.336166Z",
+            "modified": "2026-11-06T03:42:08.336166Z",
+            "name": "IP Malicioso C2 - 198.51.100.126",
+            "pattern": "[ipv4-addr:value = '198.51.100.126']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-11-06T03:42:08.336151Z"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--920f0c03-180e-4e81-b96c-94563e21455d",
+            "created": "2026-11-06T03:42:08.34016Z",
+            "modified": "2026-11-06T03:42:08.34016Z",
+            "relationship_type": "uses",
+            "source_ref": "threat-actor--de0d9dac-f4cb-47dd-9f01-881e2dfbe8c7",
+            "target_ref": "malware--1705f524-f7d8-47ca-aabc-a77737b79098"
+        }
+    ]
+}

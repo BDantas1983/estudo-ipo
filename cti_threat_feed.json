@@ -1,0 +1,94 @@
+{
+    "feed_version": "2.1",
+    "total_iocs": 8,
+    "indicators": [
+        {
+            "id": "indicator--06178ec5-5ccd-4855-a42e-7186358eae94",
+            "type": "ipv4-addr",
+            "value": "198.51.100.23",
+            "threat_actor": "APT-DarkSerpent",
+            "mitre_technique": "T1071.001",
+            "technique_name": "Application Layer Protocol: Web Protocols (C2 Beacon)",
+            "confidence": 90,
+            "first_seen": "2026-10-22T03:42:13.837326+00:00",
+            "description": "Servidor de Comando e Controle (C2) associado a APT-DarkSerpent."
+        },
+        {
+            "id": "indicator--a7373b48-780c-4199-b540-cc1c2410feb3",
+            "type": "ipv4-addr",
+            "value": "198.51.100.89",
+            "threat_actor": "APT-DarkSerpent",
+            "mitre_technique": "T1071.001",
+            "technique_name": "Application Layer Protocol: Web Protocols (C2 Beacon)",
+            "confidence": 90,
+            "first_seen": "2026-10-22T03:42:13.837379+00:00",
+            "description": "Servidor de Comando e Controle (C2) associado a APT-DarkSerpent."
+        },
+        {
+            "id": "indicator--82ed939b-8694-4ef7-9eaf-00a5724258df",
+            "type": "domain-name",
+            "value": "api-telemetry-service.com",
+            "threat_actor": "APT-DarkSerpent",
+            "mitre_technique": "T1566.001",
+            "technique_name": "Phishing: Spearphishing Attachment",
+            "confidence": 85,
+            "first_seen": "2026-10-27T03:42:13.837404+00:00",
+            "description": "Dom\u00ednio malicioso utilizado para exfiltra\u00e7\u00e3o ou entrega de payload."
+        },
+        {
+            "id": "indicator--d1324b69-0b97-4aea-84ff-4ae1563f5af0",
+            "type": "domain-name",
+            "value": "cdn-auth-sync.net",
+            "threat_actor": "APT-DarkSerpent",
+            "mitre_technique": "T1566.001",
+            "technique_name": "Phishing: Spearphishing Attachment",
+            "confidence": 85,
+            "first_seen": "2026-10-27T03:42:13.837423+00:00",
+            "description": "Dom\u00ednio malicioso utilizado para exfiltra\u00e7\u00e3o ou entrega de payload."
+        },
+        {
+            "id": "indicator--d95582ad-ea99-47da-b881-e4a890bb5524",
+            "type": "ipv4-addr",
+            "value": "203.0.113.105",
+            "threat_actor": "FinRansom-99",
+            "mitre_technique": "T1110.001",
+            "technique_name": "Brute Force: Password Guessing",
+            "confidence": 90,
+            "first_seen": "2026-10-22T03:42:13.837438+00:00",
+            "description": "Servidor de Comando e Controle (C2) associado a FinRansom-99."
+        },
+        {
+            "id": "indicator--e91c6a9e-322d-49ee-a698-c054a718dc5f",
+            "type": "ipv4-addr",
+            "value": "203.0.113.210",
+            "threat_actor": "FinRansom-99",
+            "mitre_technique": "T1110.001",
+            "technique_name": "Brute Force: Password Guessing",
+            "confidence": 90,
+            "first_seen": "2026-10-22T03:42:13.837453+00:00",
+            "description": "Servidor de Comando e Controle (C2) associado a FinRansom-99."
+        },
+        {
+            "id": "indicator--f9977840-1b7e-4215-b21a-f66cd97dd822",
+            "type": "domain-name",
+            "value": "pay-decrypt-portal.org",
+            "threat_actor": "FinRansom-99",
+            "mitre_technique": "T1190",
+            "technique_name": "Exploit Public-Facing Application",
+            "confidence": 85,
+            "first_seen": "2026-10-27T03:42:13.837924+00:00",
+            "description": "Dom\u00ednio malicioso utilizado para exfiltra\u00e7\u00e3o ou entrega de payload."
+        },
+        {
+            "id": "indicator--73d80a4d-f0f7-4fdc-b50c-8431260b0a65",
+            "type": "domain-name",
+            "value": "file-storage-cloud.cc",
+            "threat_actor": "FinRansom-99",
+            "mitre_technique": "T1190",
+            "technique_name": "Exploit Public-Facing Application",
+            "confidence": 85,
+            "first_seen": "2026-10-27T03:42:13.837956+00:00",
+            "description": "Dom\u00ednio malicioso utilizado para exfiltra\u00e7\u00e3o ou entrega de payload."
+        }
+    ]
+}

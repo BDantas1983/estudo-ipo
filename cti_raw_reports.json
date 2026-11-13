@@ -1,0 +1,41 @@
+{
+    "description": "Relatórios brutos não estruturados de Inteligência de Ameaças Cibernéticas (CTI) para processamento via PLN/NER.",
+    "reports": [
+        {
+            "report_id": "RPT-2026-001",
+            "title": "Análise de Campanha APT-DarkSerpent contra Infraestrutura Financeira",
+            "source": "CERT-BR / Threat Intel Lab",
+            "date": "2026-10-28",
+            "raw_text": "Durante outubro de 2026, analistas identificaram uma nova campanha atribuída ao grupo APT-DarkSerpent (também rastreado como DarkSerpent-Campaign). O vetor inicial utilizou e-mails de spearphishing com anexos maliciosos (T1566.001) que exploravam a vulnerabilidade CVE-2026-4102. Após a infecção com o implante ViperRAT, o host comprometido iniciou ataques de força bruta e adivinhação de senhas (password guessing - T1110.001) contra serviços SSH e RDP na porta 22 e 3389 a partir do IP 203.0.113.105. A comunicação de comando e controle (C2) foi estabelecida via protocolo web HTTP/HTTPS (T1071.001) realizando beaconing regular com intervalo médio de 60 segundos e baixo jitter para os servidores 198.51.100.23 e 198.51.100.89, além dos domínios api-telemetry-service.com e cdn-auth-sync.net. O hash SHA-256 do payload coletado é e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855."
+        },
+        {
+            "report_id": "RPT-2026-002",
+            "title": "Operação de Extorsão Dupla do Ransomware BlackCat (ALPHV)",
+            "source": "Global SOC Advisory",
+            "date": "2026-10-30",
+            "raw_text": "O grupo de ransomware BlackCat (conhecido pelo alias ALPHV e Noberus) conduziu intrusões rápidas iniciadas por ataques massivos de força bruta (brute force password guessing T1110.001) contra credenciais corporativas expostas. Uma vez dentro da rede, o malware BlackCat-Rust estabelece canal de comando e controle sobre protocolos web HTTP/HTTPS e Tor (T1071.001) e executa exfiltração massiva de dados sensíveis em grandes volumes através de protocolos alternativos e serviços de armazenamento em nuvem (T1048) para o domínio file-storage-cloud.cc. Nenhuma movimentação lateral lenta ou espionagem prolongada foi observada."
+        },
+        {
+            "report_id": "RPT-2026-003",
+            "title": "Espionagem Diplomática pelo Grupo Kimsuky (Velvet Chollima)",
+            "source": "Threat Research Bulletin",
+            "date": "2026-11-01",
+            "raw_text": "O ator norte-coreano Kimsuky (Velvet Chollima / Thallium) direcionou campanhas de spearphishing com links maliciosos (T1566.002) para diplomatas. O malware GoldDragon realiza descoberta e varredura de serviços de rede internos (port scan T1046), transferência lateral de ferramentas via SMB (T1570) e utiliza serviços web em nuvem bidirecionais (T1102) e protocolo HTTP padrão (T1071.001) para manter persistência de C2 e exfiltrar documentos (T1048) para o IP 198.51.100.126."
+        },
+        {
+            "report_id": "RPT-2026-004",
+            "title": "Atividade Multi-Vetor do Lazarus Group (HIDDEN COBRA)",
+            "source": "Cyber Defense Threat Feed",
+            "date": "2026-11-03",
+            "raw_text": "Relatório técnico detalha operações do Lazarus Group (HIDDEN COBRA) explorando servidores web públicos vulneráveis (exploit public-facing application T1190, CVE-2025-8891) com o trojan BlindingCan. A operação combinou tunelamento de DNS (DNS tunneling T1071.004), beaconing HTTPS (T1071.001), uso de APIs web externas como dead drop (T1102), varredura de portas internas (T1046), movimentação lateral de ferramentas (T1570), força bruta de credenciais (T1110.001) e exfiltração de grandes volumes de pacotes (T1048)."
+        },
+        {
+            "report_id": "RPT-2026-005",
+            "title": "Campanha de Password Spraying e Túneis C2 pelo APT28 (Fancy Bear)",
+            "source": "EU-CERT Threat Report",
+            "date": "2026-11-04",
+            "raw_text": "O grupo estatal APT28 (Fancy Bear / Sofacy / Strontium) empregou ataques distribuídos de password spraying (T1110.003) e exploração de aplicações públicas (T1190, CVE-2026-1120) com o implante Zebrocy. A infraestrutura utilizou proxies multi-hop (T1090), conexões de área de trabalho remota RDP (T1021.001), túneis DNS (T1071.004) e exfiltração direta pelo canal C2 (T1041)."
+        }
+    ]
+}
+

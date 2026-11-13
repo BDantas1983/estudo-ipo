@@ -1,0 +1,239 @@
+{
+    "description": "Base de Perfis de Comportamento de Ameaças (Padrões CTI - Modelo DML-3+ / MITRE ATT&CK)",
+    "version": "1.0",
+    "reference": "Barros & Gondim (SBRC 2025) - Intelligence Pattern Orchestrator (IPO)",
+    "patterns": [
+        {
+            "id": "pattern--lazarus",
+            "name": "Lazarus Group",
+            "aliases": ["HIDDEN COBRA", "Guardians of Peace"],
+            "type": "APT / Nation-State",
+            "description": "Grupo norte-coreano conhecido por operações financeiras complexas, espionagem e ciberataques destrutivos.",
+            "network_ttps": [
+                {
+                    "technique_id": "T1071.001",
+                    "tactic": "Command and Control",
+                    "name": "Web Protocols (HTTP/HTTPS C2)",
+                    "detection_rules": ["ioc_c2_match", "beaconing_traffic"]
+                },
+                {
+                    "technique_id": "T1102",
+                    "tactic": "Command and Control",
+                    "name": "Web Service (Dead Drop Resolvers / External APIs)",
+                    "detection_rules": ["api_beaconing"]
+                },
+                {
+                    "technique_id": "T1071.004",
+                    "tactic": "Command and Control",
+                    "name": "DNS Tunneling",
+                    "detection_rules": ["dns_tunneling"]
+                },
+                {
+                    "technique_id": "T1570",
+                    "tactic": "Lateral Movement",
+                    "name": "Lateral Tool Transfer",
+                    "detection_rules": ["internal_smb_transfer", "lateral_transfer"]
+                },
+                {
+                    "technique_id": "T1048",
+                    "tactic": "Exfiltration",
+                    "name": "Exfiltration Over Alternative Protocol",
+                    "detection_rules": ["large_data_outbound"]
+                },
+                {
+                    "technique_id": "T1110.001",
+                    "tactic": "Credential Access",
+                    "name": "Password Guessing / Brute Force",
+                    "detection_rules": ["bruteforce_auth"]
+                },
+                {
+                    "technique_id": "T1046",
+                    "tactic": "Discovery",
+                    "name": "Network Service Discovery",
+                    "detection_rules": ["port_scan_sweep"]
+                },
+                {
+                    "technique_id": "T1190",
+                    "tactic": "Initial Access",
+                    "name": "Exploit Public-Facing Application",
+                    "detection_rules": ["exploit_web_request"]
+                },
+                {
+                    "technique_id": "T1566.002",
+                    "tactic": "Initial Access",
+                    "name": "Spearphishing Link",
+                    "detection_rules": ["phishing_link_callback"]
+                }
+            ]
+        },
+        {
+            "id": "pattern--kimsuky",
+            "name": "Kimsuky",
+            "aliases": ["Velvet Chollima", "Thallium", "Black Banshee"],
+            "type": "APT / Cyber Espionage",
+            "description": "Focado em coleta de inteligência militar e diplomática através de spearphishing direcionado e comunicação web furtiva.",
+            "network_ttps": [
+                {
+                    "technique_id": "T1071.001",
+                    "tactic": "Command and Control",
+                    "name": "Web Protocols (HTTP/HTTPS C2)",
+                    "detection_rules": ["ioc_c2_match", "beaconing_traffic"]
+                },
+                {
+                    "technique_id": "T1102",
+                    "tactic": "Command and Control",
+                    "name": "Web Service (Cloud Storage C2)",
+                    "detection_rules": ["api_beaconing"]
+                },
+                {
+                    "technique_id": "T1566.002",
+                    "tactic": "Initial Access",
+                    "name": "Spearphishing Link",
+                    "detection_rules": ["phishing_link_callback"]
+                },
+                {
+                    "technique_id": "T1048",
+                    "tactic": "Exfiltration",
+                    "name": "Exfiltration Over Web Service",
+                    "detection_rules": ["large_data_outbound"]
+                },
+                {
+                    "technique_id": "T1570",
+                    "tactic": "Lateral Movement",
+                    "name": "Lateral Tool Transfer",
+                    "detection_rules": ["lateral_transfer"]
+                },
+                {
+                    "technique_id": "T1046",
+                    "tactic": "Discovery",
+                    "name": "Network Service Discovery",
+                    "detection_rules": ["port_scan_sweep"]
+                }
+            ]
+        },
+        {
+            "id": "pattern--apt28",
+            "name": "APT28",
+            "aliases": ["Fancy Bear", "Sofacy", "Pawn Storm", "Strontium"],
+            "type": "APT / State-Sponsored",
+            "description": "Grupo russo com alta capacidade operacional, uso intensivo de exploits zero-day, password spraying e túneis de rede.",
+            "network_ttps": [
+                {
+                    "technique_id": "T1071.001",
+                    "tactic": "Command and Control",
+                    "name": "Web Protocols (HTTP/HTTPS)",
+                    "detection_rules": ["ioc_c2_match", "beaconing_traffic"]
+                },
+                {
+                    "technique_id": "T1110.003",
+                    "tactic": "Credential Access",
+                    "name": "Password Spraying",
+                    "detection_rules": ["bruteforce_auth"]
+                },
+                {
+                    "technique_id": "T1190",
+                    "tactic": "Initial Access",
+                    "name": "Exploit Public-Facing Application",
+                    "detection_rules": ["exploit_web_request"]
+                },
+                {
+                    "technique_id": "T1046",
+                    "tactic": "Discovery",
+                    "name": "Network Service Discovery",
+                    "detection_rules": ["port_scan_sweep"]
+                },
+                {
+                    "technique_id": "T1570",
+                    "tactic": "Lateral Movement",
+                    "name": "Lateral Tool Transfer",
+                    "detection_rules": ["lateral_transfer"]
+                },
+                {
+                    "technique_id": "T1071.004",
+                    "tactic": "Command and Control",
+                    "name": "DNS Tunneling",
+                    "detection_rules": ["dns_tunneling"]
+                },
+                {
+                    "technique_id": "T1041",
+                    "tactic": "Exfiltration",
+                    "name": "Exfiltration Over C2 Channel",
+                    "detection_rules": ["large_data_outbound"]
+                },
+                {
+                    "technique_id": "T1090",
+                    "tactic": "Command and Control",
+                    "name": "Proxy / Multi-hop Proxy",
+                    "detection_rules": ["tor_proxy_traffic"]
+                },
+                {
+                    "technique_id": "T1021.001",
+                    "tactic": "Lateral Movement",
+                    "name": "Remote Desktop Protocol (RDP)",
+                    "detection_rules": ["rdp_inbound_outbound"]
+                },
+                {
+                    "technique_id": "T1566.001",
+                    "tactic": "Initial Access",
+                    "name": "Spearphishing Attachment",
+                    "detection_rules": ["phishing_link_callback"]
+                }
+            ]
+        },
+        {
+            "id": "pattern--blackcat",
+            "name": "BlackCat",
+            "aliases": ["ALPHV", "Noberus"],
+            "type": "Ransomware as a Service (RaaS)",
+            "description": "Grupo criminoso especializado em extorsão dupla com ransomware desenvolvido em Rust, foco em exfiltração em massa e destruição rápida.",
+            "network_ttps": [
+                {
+                    "technique_id": "T1110.001",
+                    "tactic": "Credential Access",
+                    "name": "Password Guessing / Brute Force",
+                    "detection_rules": ["bruteforce_auth"]
+                },
+                {
+                    "technique_id": "T1048",
+                    "tactic": "Exfiltration",
+                    "name": "Exfiltration Over Alternative Protocol (Mega/Cloud)",
+                    "detection_rules": ["large_data_outbound"]
+                },
+                {
+                    "technique_id": "T1071.001",
+                    "tactic": "Command and Control",
+                    "name": "Web Protocols (Tor / HTTP)",
+                    "detection_rules": ["beaconing_traffic", "ioc_c2_match"]
+                }
+            ]
+        },
+        {
+            "id": "pattern--darkserpent",
+            "name": "APT-DarkSerpent",
+            "aliases": ["DarkSerpent-Campaign"],
+            "type": "APT / Local Simulator",
+            "description": "Perfil baseado no feed local do laboratório, demonstrando a correlação das técnicas ativas nos logs de teste.",
+            "network_ttps": [
+                {
+                    "technique_id": "T1071.001",
+                    "tactic": "Command and Control",
+                    "name": "Web Protocols (HTTP C2 Beacon)",
+                    "detection_rules": ["beaconing_traffic", "ioc_c2_match"]
+                },
+                {
+                    "technique_id": "T1110.001",
+                    "tactic": "Credential Access",
+                    "name": "Password Guessing / Brute Force",
+                    "detection_rules": ["bruteforce_auth"]
+                },
+                {
+                    "technique_id": "T1566.001",
+                    "tactic": "Initial Access",
+                    "name": "Spearphishing Attachment Callback",
+                    "detection_rules": ["phishing_link_callback"]
+                }
+            ]
+        }
+    ]
+}
+
