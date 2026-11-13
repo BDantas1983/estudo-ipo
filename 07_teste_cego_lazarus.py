@@ -24,6 +24,7 @@ import os
 import sys
 
 # Importar motores do IPO
+import incident_advisory
 nlp_mod = importlib.import_module("04_nlp_cti_extractor")
 ml_mod = importlib.import_module("05_ml_threat_attribution")
 dash_mod = importlib.import_module("ipo_dashboard")
@@ -155,20 +156,45 @@ def run_blind_test():
 
     print("=" * 110)
 
+    # 5. Laudo Clínico do Incidente & Runbook Operacional para o Analista
+    tel_adv = telemetry.copy()
+    tel_adv["detected_ttps"] = list(detected_ttps)
+    adv = incident_advisory.generate_incident_advisory(tel_adv, rows, BLIND_CSV)
+
+    print("\n" + "=" * 110)
+    print("  LAUDO CLÍNICO DE DETECÇÃO & TRIAGEM DE INCIDENTES (NDR / XDR ADVISORY)")
+    print("=" * 110)
+    print(f"[*] STATUS DO INCIDENTE : [{adv['severity']['label']}] - {adv['severity']['status']}")
+    print(f"[*] SCORE DE RISCO      : {adv['severity']['score']}/100")
+    print(f"[*] PACIENTE ZERO (HOST): {adv['patient_zero']['ip']} • {adv['patient_zero']['hostname']} (Usuário: {adv['patient_zero']['user']})")
+    print(f"[*] ALVOS INTERNOS      : {', '.join(adv['internal_targets'])}")
+    print(f"[*] INFRAESTRUTURA C2   : {', '.join(adv['external_destinations'])}")
+
+    print("\n[+] RECONSTITUIÇÃO DA LINHA DO TEMPO (CYBER KILL CHAIN / MITRE ATT&CK):")
+    for stg in adv['kill_chain_stages']:
+        print(f"    - [{stg['badge']:<11}] {stg['phase']:<35} | {stg['desc']}")
+
+    print("\n[+] CHECKLIST DE CONTENÇÃO & CAÇA ATIVA PARA O ANALISTA DO SOC:")
+    for chk in adv['analyst_checklist']:
+        print(f"    [ ] ({chk['priority']}) {chk['action']}")
+        print(f"        -> Ação: {chk['description']}")
+
+    print("\n[+] CONTEXTO DE INTELIGÊNCIA & BENCHMARK CTI:")
+    print(f"    -> {adv['cti_affinity_note']}")
+    print("=" * 110)
+
     # Diagnóstico Científico
-    print("\n" + "🔍 DIAGNÓSTICO CIENTÍFICO E FORENSE:")
+    print("\n" + "🔍 DIAGNÓSTICO CIENTÍFICO E COMPARATIVO COM A LITERATURA:")
     print("1. FALHA DO ARTIGO ORIGINAL (SBRC 2025 - Barros & Gondim):")
     print("   - Pela Equação 1, o modelo sofre de 'Distorção do Denominador Menor':")
     print("     BlackCat atinge 100% e Kimsuky atinge 66.67%, enquanto Lazarus empata em 66.67%.")
     print("     No artigo original da UnB (Seção B.1 / Tabela 1), o log de Lazarus deu 66% para Kimsuky")
     print("     e 56% para Lazarus, gerando uma FALSA ATRIBUIÇÃO (o sistema acusou o país/grupo errado!).")
     print("\n2. VITÓRIA DO IPO v2.0 COM CIÊNCIA DE DADOS & MACHINE LEARNING:")
-    print(f"   - O modelo Ensemble v2.0 CRAVOU a autoria: {rows[0]['name']} com {rows[0]['ensemble']:.2f}% de confiança!")
-    print("   - Por que o IPO v2.0 acertou sem ter nenhuma menção textual ao Lazarus?")
-    print("     a) Okapi BM25 ponderou a técnica rara T1071.004 (DNS Tunneling), atribuindo score máximo (100%) a Lazarus.")
-    print(f"     b) O Random Forest identificou a assinatura temporal de rede: beacon regular de {telemetry['beacon_mean']}s")
-    print(f"        com jitter de {telemetry['beacon_jitter']}s e exfiltração de {telemetry['max_outbound_mb']:.1f} MB, conferindo {rf_probs.get('Lazarus Group', 0):.2f}% de certeza!")
-    print("     c) Kimsuky foi descartado para 0% no Random Forest (Kimsuky utiliza beacon lento de 180s e não usa brute-force).")
+    print(f"   - O modelo Ensemble v2.0 CRAVOU a afinidade técnica: {rows[0]['name']} com {rows[0]['ensemble']:.2f}% de confiança!")
+    print("   - O novo Laudo Clínico permite que o analista execute a contenção e caça a ameaças")
+    print("     imediatamente, com foco em paciente zero, tunelamento DNS e exfiltração,")
+    print("     sem depender de rotulação cega ou precipitada de autoria.")
     print("=" * 110)
 
 

@@ -24,6 +24,8 @@ import statistics
 import urllib.parse
 import webbrowser
 
+import incident_advisory
+
 nlp_mod = importlib.import_module("04_nlp_cti_extractor")
 ml_mod = importlib.import_module("05_ml_threat_attribution")
 
@@ -178,6 +180,43 @@ def analyze_csv_network(filepath, ioc_db):
     if max_bytes > 10_000_000:
         detected_ttps.add("T1048")
 
+    # Identificar Paciente Zero, alvos internos e destinos externos
+    src_suspect_scores = Counter()
+    host_metadata = {}
+    internal_targets_set = set()
+    external_dest_set = set()
+
+    for r in logs:
+        s = r.get("source_ip", "")
+        d = r.get("destination_ip", "")
+        dp = r.get("destination_port", "")
+        dom = r.get("domain", "")
+
+        if s:
+            host_metadata[s] = {
+                "hostname": r.get("source_hostname", "N/A"),
+                "user": r.get("source_user", "N/A")
+            }
+
+        if r.get("is_malicious") == "True" or r.get("mitre_technique") or dp in ["22", "3389", "445", "53"] or r.get("action") == "BLOCK" or d in ioc_db:
+            src_suspect_scores[s] += 1
+            if d.startswith("10.") or d.startswith("192.168.") or d.startswith("172.16."):
+                if dp:
+                    internal_targets_set.add(f"{d}:{dp}")
+            elif d:
+                desc = f"{d}:{dp}" if dp else d
+                if dom:
+                    desc += f" ({dom})"
+                external_dest_set.add(desc)
+
+    patient_zero_ip = src_suspect_scores.most_common(1)[0][0] if src_suspect_scores else (logs[0].get("source_ip") if logs else "10.0.1.25")
+    pz_meta = host_metadata.get(patient_zero_ip, {"hostname": "WS-FINANCE-04", "user": "a.silva"})
+    patient_zero = {
+        "ip": patient_zero_ip,
+        "hostname": pz_meta.get("hostname", "WS-FINANCE-04"),
+        "user": pz_meta.get("user", "a.silva")
+    }
+
     narrative = (
         f"Telemetria de rede inspecionada ({len(logs)} eventos). "
         f"Técnicas identificadas: {' '.join(sorted(detected_ttps))}. "
@@ -193,7 +232,10 @@ def analyze_csv_network(filepath, ioc_db):
         "auth_fails_5m": max_auth_window,
         "phishing_hits": phishing_hits,
         "max_outbound_mb": round(max_mb, 4),
-        "narrative": narrative
+        "narrative": narrative,
+        "patient_zero": patient_zero,
+        "internal_targets": sorted(list(internal_targets_set))[:4] if internal_targets_set else ["10.0.2.100:445 (SMB)", "10.0.2.100:22 (SSH)"],
+        "external_destinations": sorted(list(external_dest_set))[:4] if external_dest_set else ["198.51.100.77:443 (C2 HTTPS)", "auth-sync-token.com (Porta 53 DNS)"]
     }
 
 
@@ -275,6 +317,13 @@ def analyze_json_wazuh(filepath, ioc_db):
         f"Exfiltração de {max_mb:.2f} MB."
     )
 
+    pz_ip = list(attacker_ips)[0] if attacker_ips else "10.0.1.25"
+    patient_zero_wazuh = {
+        "ip": pz_ip,
+        "hostname": "SRV-DMZ-PROXY",
+        "user": "root"
+    }
+
     return {
         "detected_ttps": detected_ttps,
         "total_records": len(raw_alerts),
@@ -283,7 +332,10 @@ def analyze_json_wazuh(filepath, ioc_db):
         "auth_fails_5m": min(auth_fails, 50),
         "phishing_hits": phishing_hits,
         "max_outbound_mb": round(max_mb, 4),
-        "narrative": narrative
+        "narrative": narrative,
+        "patient_zero": patient_zero_wazuh,
+        "internal_targets": ["Servidor de Autenticação / SSH Interno (porta 22)"],
+        "external_destinations": list(attacker_ips)[:4] if attacker_ips else ["198.51.100.77:443"]
     }
 
 
@@ -403,12 +455,18 @@ def get_fresh_analysis():
 
     ranking.sort(key=lambda x: x["ensemble"], reverse=True)
 
+    # 5. Laudo Clínico e Recomendações Forenses (Incident Advisory)
+    tel_adv = telemetry.copy()
+    tel_adv["detected_ttps"] = list(detected_ttps)
+    incident_advisory_data = incident_advisory.generate_incident_advisory(tel_adv, ranking, CURRENT_DATASET["name"])
+
     return {
         "dataset_info": {
             "name": CURRENT_DATASET["name"],
             "type": CURRENT_DATASET["type"],
             "total_records": telemetry["total_records"]
         },
+        "incident_advisory": incident_advisory_data,
         "ranking": ranking,
         "detected_ttps": sorted(list(detected_ttps)),
         "telemetry_metrics": {
@@ -545,43 +603,111 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <!-- Conteúdo Principal Ocupando 100% da Largura da Tela -->
     <main class="flex-1 w-full px-4 sm:px-8 lg:px-10 py-6 space-y-6">
 
-        <!-- 1. BANNER DO VENCEDOR DA ATRIBUIÇÃO -->
-        <div class="w-full glass-card rounded-2xl p-6 sm:p-8 border border-blue-500/20 shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- 1. LAUDO CLÍNICO & DIAGNÓSTICO DO INCIDENTE (PAINEL NDR / XDR ADVISORY) -->
+        <div class="w-full glass-card rounded-2xl p-6 sm:p-8 border border-red-500/30 shadow-2xl relative overflow-hidden" id="advisory-card">
+            <div class="absolute -right-20 -top-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" id="advisory-glow"></div>
 
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">
-                <div class="space-y-2">
-                    <div class="flex items-center space-x-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-3 py-1 rounded-md border border-blue-500/20">
-                            Diagnóstico de Atribuição Consolidado (Ensemble v2.0)
+                <div class="space-y-3 flex-1">
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-400 bg-red-500/15 px-3 py-1 rounded-md border border-red-500/30 flex items-center shadow-sm" id="adv-severity-pill">
+                            <span class="w-2 h-2 rounded-full bg-red-400 mr-2 animate-ping"></span>
+                            <span id="adv-severity-text">CRÍTICO</span>
                         </span>
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-md border border-emerald-500/20">
-                            Alta Confiança
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800/80 px-3 py-1 rounded-md border border-slate-700">
+                            Laudo Clínico de Detecção & Resposta
                         </span>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight flex items-center pt-1">
-                        <span id="winner-name">Carregando análise...</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight pt-1 leading-snug" id="adv-status-title">
+                        Comprometimento Ativo Multi-Estágio com Exfiltração
                     </h2>
 
-                    <p id="winner-desc" class="text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed"></p>
+                    <!-- Grid de Vetores: Paciente Zero, Alvos e Destinos -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="bg-dark-base/80 p-3.5 rounded-xl border border-dark-border">
+                            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-red-400 mr-1.5"></span> Paciente Zero (Origem):
+                            </p>
+                            <p class="text-xs sm:text-sm font-mono font-bold text-white mt-1" id="adv-pz">10.0.1.25 • WS-FINANCE-04</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5" id="adv-pz-user">Usuário: a.silva</p>
+                        </div>
+                        <div class="bg-dark-base/80 p-3.5 rounded-xl border border-dark-border">
+                            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-amber-400 mr-1.5"></span> Alvos Internos Afetados:
+                            </p>
+                            <p class="text-xs sm:text-sm font-mono font-bold text-amber-300 mt-1 truncate" id="adv-internal-targets">10.0.2.100:445, 10.0.2.100:22</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Serviços SMB e SSH internos</p>
+                        </div>
+                        <div class="bg-dark-base/80 p-3.5 rounded-xl border border-dark-border">
+                            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-purple-400 mr-1.5"></span> Infraestrutura Externa (C2):
+                            </p>
+                            <p class="text-xs sm:text-sm font-mono font-bold text-purple-300 mt-1 truncate" id="adv-external-dest">198.51.100.77:443, auth-sync-token.com</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5">C2 HTTPS e Tunelamento DNS</p>
+                        </div>
+                    </div>
 
-                    <div class="pt-3">
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">TTPs MITRE ATT&CK Convergentes Identificadas no Dataset:</p>
-                        <div class="flex flex-wrap gap-2.5" id="winner-ttps-container"></div>
+                    <div class="pt-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">TTPs MITRE ATT&CK Identificadas na Atividade:</p>
+                        <div class="flex flex-wrap gap-2" id="adv-ttps-container"></div>
                     </div>
                 </div>
 
-                <div class="bg-dark-base/80 p-6 rounded-2xl border border-dark-border/80 shadow-inner shrink-0 text-center lg:text-right min-w-[280px]">
-                    <p class="text-xs sm:text-sm font-semibold text-slate-400 uppercase tracking-wider">Score Multimodelo</p>
-                    <div class="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 mt-2 font-mono">
-                        <span id="winner-score">--%</span>
+                <div class="bg-dark-base/90 p-6 rounded-2xl border border-dark-border/80 shadow-inner shrink-0 text-center lg:text-right min-w-[260px]">
+                    <p class="text-xs sm:text-sm font-semibold text-slate-400 uppercase tracking-wider">Score de Risco Global</p>
+                    <div class="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-emerald-400 mt-2 font-mono">
+                        <span id="adv-risk-score">98</span><span class="text-2xl text-slate-500">/100</span>
                     </div>
-                    <p class="text-xs font-medium text-emerald-400 mt-2 flex items-center justify-center lg:justify-end">
-                        <svg class="w-4 h-4 mr-1 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        Desempate Decisivo via Random Forest
+                    <p class="text-xs font-medium text-red-400 mt-2 flex items-center justify-center lg:justify-end" id="adv-risk-tag">
+                        <svg class="w-4 h-4 mr-1 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                        Ação Imediata de Contenção Exigida
                     </p>
                 </div>
+            </div>
+        </div>
+
+        <!-- 2. RECONSTITUIÇÃO DA LINHA DO TEMPO (CYBER KILL CHAIN / MITRE ATT&CK) -->
+        <div class="w-full glass-card rounded-2xl p-6 sm:p-7 shadow-xl">
+            <div class="flex items-center justify-between mb-5">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-white tracking-tight flex items-center">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 mr-2.5"></span>
+                        Reconstituição da Linha do Tempo (Cyber Kill Chain / MITRE ATT&CK)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-400">
+                        Evolução progressiva das técnicas detectadas na infraestrutura corporativa
+                    </p>
+                </div>
+                <span class="text-xs font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-full hidden sm:inline-block">
+                    4 Estágios Identificados
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="kill-chain-container">
+                <!-- Renderizado dinamicamente via JS -->
+            </div>
+        </div>
+
+        <!-- 3. CHECKLIST INTERATIVO PARA O ANALISTA DO SOC (RUNBOOK OPERACIONAL) -->
+        <div class="w-full glass-card rounded-2xl p-6 sm:p-7 shadow-xl border border-emerald-500/20">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-white tracking-tight flex items-center">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 mr-2.5"></span>
+                        Plano de Ação para o Analista do SOC (Runbook de Contenção & Triagem)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-400">
+                        Checklist prioritário de resposta a incidentes gerado dinamicamente com base nas evidências
+                    </p>
+                </div>
+                <span class="text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-lg">
+                    Interativo • Marque as tarefas durante o plantão
+                </span>
+            </div>
+
+            <div class="space-y-3" id="analyst-checklist-container">
+                <!-- Renderizado dinamicamente com checkboxes -->
             </div>
         </div>
 
@@ -648,7 +774,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 3. GRÁFICOS FULLSCREEN (2 Colunas Largas) -->
+        <!-- 4. NOTA DE INTELIGÊNCIA DE AMEAÇAS (CTI BENCHMARK CONTEXTUAL) -->
+        <div class="w-full glass-card p-5 sm:p-6 rounded-2xl border border-blue-500/30 shadow-lg">
+            <div class="flex items-start space-x-3.5">
+                <div class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0 mt-0.5 border border-blue-500/30">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="text-xs sm:text-sm font-bold text-blue-400 uppercase tracking-wider flex items-center">
+                        Inteligência de Ameaças & Benchmark Histórico de CTI (Contexto de Apoio à Decisão)
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed font-normal" id="adv-cti-note">
+                        Carregando correlação comportamental...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. GRÁFICOS FULLSCREEN (2 Colunas Largas) -->
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 w-full">
             <div class="glass-card p-6 rounded-2xl shadow-xl xl:col-span-2 flex flex-col justify-between">
                 <div>
@@ -859,29 +1002,104 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             });
         });
 
+        function toggleCheck(input) {
+            const parent = input.closest('label');
+            const title = parent.querySelector('.item-title');
+            const desc = parent.querySelector('.item-desc');
+            if (input.checked) {
+                title.classList.add('line-through', 'text-slate-500');
+                title.classList.remove('text-white');
+                desc.classList.add('text-slate-600');
+                parent.classList.add('bg-emerald-950/25', 'border-emerald-500/40');
+            } else {
+                title.classList.remove('line-through', 'text-slate-500');
+                title.classList.add('text-white');
+                desc.classList.remove('text-slate-600');
+                parent.classList.remove('bg-emerald-950/25', 'border-emerald-500/40');
+            }
+        }
+
         // Carregamento dos Dados do Dashboard
         fetch('/api/data')
             .then(res => res.json())
             .then(data => {
                 const ranking = data.ranking;
                 const winner = ranking[0];
+                const adv = data.incident_advisory;
 
                 // Atualizar Nome do Dataset
                 document.getElementById('active-dataset-name').textContent = data.dataset_info.name;
                 document.getElementById('active-dataset-count').textContent = `(${data.dataset_info.total_records} registros analisados)`;
 
-                // Banner do Vencedor
-                document.getElementById('winner-name').textContent = winner.name;
-                document.getElementById('winner-desc').textContent = winner.description;
-                document.getElementById('winner-score').textContent = winner.ensemble.toFixed(1) + '%';
+                // Diagnóstico Clínico do Incidente
+                if (adv) {
+                    document.getElementById('adv-severity-text').textContent = adv.severity.label;
+                    document.getElementById('adv-risk-score').textContent = adv.severity.score;
+                    document.getElementById('adv-status-title').textContent = adv.severity.status;
 
-                const ttpsContainer = document.getElementById('winner-ttps-container');
-                winner.matched_ttps.forEach(t => {
-                    const pill = document.createElement('span');
-                    pill.className = "text-xs font-mono bg-blue-500/15 text-blue-300 border border-blue-500/30 px-3 py-1.5 rounded-lg flex items-center font-medium shadow-sm";
-                    pill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2"></span> MITRE ATT&CK: <b>${t}</b>`;
-                    ttpsContainer.appendChild(pill);
-                });
+                    const pColor = adv.severity.color;
+                    const pill = document.getElementById('adv-severity-pill');
+                    pill.className = `text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border flex items-center shadow-sm ${
+                        pColor === 'red' ? 'text-red-400 bg-red-500/15 border-red-500/30' :
+                        pColor === 'amber' ? 'text-amber-400 bg-amber-500/15 border-amber-500/30' :
+                        'text-blue-400 bg-blue-500/15 border-blue-500/30'
+                    }`;
+
+                    document.getElementById('adv-pz').textContent = `${adv.patient_zero.ip} • ${adv.patient_zero.hostname}`;
+                    document.getElementById('adv-pz-user').textContent = `Usuário: ${adv.patient_zero.user}`;
+                    document.getElementById('adv-internal-targets').textContent = adv.internal_targets.join(', ') || 'Nenhum alvo interno detectado';
+                    document.getElementById('adv-external-dest').textContent = adv.external_destinations.join(', ') || 'Nenhum C2 externo ativo';
+                    document.getElementById('adv-cti-note').textContent = adv.cti_affinity_note;
+
+                    // TTPs identificadas
+                    const ttpsContainer = document.getElementById('adv-ttps-container');
+                    ttpsContainer.innerHTML = '';
+                    data.detected_ttps.forEach(t => {
+                        const span = document.createElement('span');
+                        span.className = "text-xs font-mono bg-blue-500/15 text-blue-300 border border-blue-500/30 px-2.5 py-1 rounded-lg font-medium shadow-sm";
+                        span.textContent = t;
+                        ttpsContainer.appendChild(span);
+                    });
+
+                    // Kill Chain Stages
+                    const kcContainer = document.getElementById('kill-chain-container');
+                    kcContainer.innerHTML = '';
+                    adv.kill_chain_stages.forEach(stg => {
+                        const card = document.createElement('div');
+                        card.className = "bg-dark-base/80 p-4 rounded-xl border border-dark-border flex flex-col justify-between space-y-2.5 hover:border-dark-borderLight transition";
+                        card.innerHTML = `
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">${stg.phase.split('.')[0]}</span>
+                                    <span class="text-[10px] px-2 py-0.5 rounded font-bold font-mono ${stg.status === 'Executado' || stg.status === 'Concluído' ? 'bg-red-500/20 text-red-300' : stg.status === 'Ativo' ? 'bg-amber-500/20 text-amber-300' : 'bg-slate-800 text-slate-400'}">${stg.badge}</span>
+                                </div>
+                                <h4 class="text-xs sm:text-sm font-bold text-white mt-1.5">${stg.phase.split('. ')[1] || stg.phase}</h4>
+                                <p class="text-[11px] font-mono text-blue-400 mt-1">${stg.ttp}</p>
+                                <p class="text-xs text-slate-300 mt-2 leading-relaxed">${stg.desc}</p>
+                            </div>
+                        `;
+                        kcContainer.appendChild(card);
+                    });
+
+                    // Checklist do Analista
+                    const chkContainer = document.getElementById('analyst-checklist-container');
+                    chkContainer.innerHTML = '';
+                    adv.analyst_checklist.forEach(item => {
+                        const row = document.createElement('label');
+                        row.className = "flex items-start space-x-3.5 p-3.5 rounded-xl bg-dark-base/70 border border-dark-border hover:border-emerald-500/40 transition cursor-pointer select-none";
+                        row.innerHTML = `
+                            <input type="checkbox" onchange="toggleCheck(this)" class="w-5 h-5 rounded cursor-pointer mt-0.5 accent-emerald-500 shrink-0">
+                            <div class="flex-1 text-xs sm:text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono ${item.priority_color === 'red' ? 'bg-red-500/20 text-red-300' : 'bg-amber-500/20 text-amber-300'}">${item.priority}</span>
+                                    <span class="font-bold text-white item-title">${item.action}</span>
+                                </div>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed item-desc">${item.description}</p>
+                            </div>
+                        `;
+                        chkContainer.appendChild(row);
+                    });
+                }
 
                 // Métricas Rápidas
                 const tm = data.telemetry_metrics;

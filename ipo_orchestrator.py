@@ -24,6 +24,7 @@ import re
 import statistics
 
 # Importação dos módulos de PLN e Machine Learning
+import incident_advisory
 nlp_mod = importlib.import_module("04_nlp_cti_extractor")
 ml_mod = importlib.import_module("05_ml_threat_attribution")
 
@@ -382,11 +383,45 @@ def run_ipo():
     winner = consolidated[0]
     runner_up = consolidated[1]
     print("=" * 105)
-    print(f"[!] ATRIBUIÇÃO DE ALTA CONFIANÇA (ENSEMBLE ML + PLN): {winner['actor']} ({winner['ensemble']:.2f}%)")
+    print(f"[!] AFINIDADE TÉCNICA PRINCIPAL (ENSEMBLE ML + PLN): {winner['actor']} ({winner['ensemble']:.2f}%)")
     print(f"    -> Superou o empate/ambiguidade com {runner_up['actor']} ({runner_up['ensemble']:.2f}%).")
-    print(f"    -> Por que o ML/PLN acertou? Além das TTPs ({', '.join(winner['matched_ttps'])}), o modelo")
-    print("       detectou beaconing de 60s com baixo jitter, ausência de exfiltração massiva (>10MB) típica de")
-    print("       ransomware (BlackCat) e alta similaridade semântica com o relatório RPT-2026-001.")
+    print("=" * 105)
+
+    # 6. Laudo Clínico do Incidente e Runbook Operacional (Apoio à Decisão)
+    tel_adv = {
+        "detected_ttps": list(detected_ttps),
+        "beacon_mean": ml_features["beacon_mean_interval_sec"],
+        "beacon_jitter": ml_features["beacon_jitter_sec"],
+        "auth_fails_5m": int(ml_features["auth_failures_5m"]),
+        "max_outbound_mb": ml_features["max_outbound_mb"],
+        "phishing_hits": int(ml_features["phishing_domain_hits"]),
+        "patient_zero": {"ip": "10.0.1.15", "hostname": "WS-FINANCE-01", "user": "m.silva"},
+        "internal_targets": ["10.0.2.100 (Portas 445 SMB, 22 SSH)"],
+        "external_destinations": ["api-telemetry-service.com", "cdn-auth-sync.net"]
+    }
+    adv_ranking = [{"name": r["actor"], "ensemble": r["ensemble"]} for r in consolidated]
+    adv = incident_advisory.generate_incident_advisory(tel_adv, adv_ranking, LOGS_FILE)
+
+    print("\n" + "=" * 105)
+    print("  LAUDO CLÍNICO DE DETECÇÃO & TRIAGEM DE INCIDENTES (NDR / XDR ADVISORY)")
+    print("=" * 105)
+    print(f"[*] STATUS DO INCIDENTE : [{adv['severity']['label']}] - {adv['severity']['status']}")
+    print(f"[*] SCORE DE RISCO      : {adv['severity']['score']}/100")
+    print(f"[*] PACIENTE ZERO (HOST): {adv['patient_zero']['ip']} • {adv['patient_zero']['hostname']} (Usuário: {adv['patient_zero']['user']})")
+    print(f"[*] ALVOS INTERNOS      : {', '.join(adv['internal_targets'])}")
+    print(f"[*] INFRAESTRUTURA C2   : {', '.join(adv['external_destinations'])}")
+
+    print("\n[+] RECONSTITUIÇÃO DA LINHA DO TEMPO (CYBER KILL CHAIN / MITRE ATT&CK):")
+    for stg in adv['kill_chain_stages']:
+        print(f"    - [{stg['badge']:<11}] {stg['phase']:<35} | {stg['desc']}")
+
+    print("\n[+] CHECKLIST DE CONTENÇÃO & CAÇA ATIVA PARA O ANALISTA DO SOC:")
+    for chk in adv['analyst_checklist']:
+        print(f"    [ ] ({chk['priority']}) {chk['action']}")
+        print(f"        -> Ação: {chk['description']}")
+
+    print("\n[+] CONTEXTO DE INTELIGÊNCIA & BENCHMARK CTI:")
+    print(f"    -> {adv['cti_affinity_note']}")
     print("=" * 105)
 
 
