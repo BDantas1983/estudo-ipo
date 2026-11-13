@@ -15,6 +15,7 @@ venv/
 
 # Uploads temporários locais
 uploads/
+temp_annex_imgs/
 
 # Arquivos de sistema operacional
 .DS_Store

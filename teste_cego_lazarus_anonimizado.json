@@ -1,0 +1,3726 @@
+[
+  {
+    "timestamp": "2026-11-10 08:16:37 UTC",
+    "rule": {
+      "id": "100037",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "849"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:18:08 UTC",
+    "rule": {
+      "id": "100041",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "811"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:19:35 UTC",
+    "rule": {
+      "id": "100047",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "816"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:21:05 UTC",
+    "rule": {
+      "id": "100051",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "699"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:22:42 UTC",
+    "rule": {
+      "id": "100055",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "787"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:24:18 UTC",
+    "rule": {
+      "id": "100061",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "800"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:25:42 UTC",
+    "rule": {
+      "id": "100064",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "530"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:27:09 UTC",
+    "rule": {
+      "id": "100068",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "478"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:28:38 UTC",
+    "rule": {
+      "id": "100072",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "643"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:30:16 UTC",
+    "rule": {
+      "id": "100078",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "796"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:31:46 UTC",
+    "rule": {
+      "id": "100081",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "481"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:33:12 UTC",
+    "rule": {
+      "id": "100087",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "752"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:34:45 UTC",
+    "rule": {
+      "id": "100091",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "829"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:36:19 UTC",
+    "rule": {
+      "id": "100096",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "463"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:37:54 UTC",
+    "rule": {
+      "id": "100099",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "499"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:39:20 UTC",
+    "rule": {
+      "id": "100102",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "626"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:40:49 UTC",
+    "rule": {
+      "id": "100108",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "575"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:42:20 UTC",
+    "rule": {
+      "id": "100111",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "570"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:43:49 UTC",
+    "rule": {
+      "id": "100115",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "802"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:45:21 UTC",
+    "rule": {
+      "id": "100119",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "606"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:46:50 UTC",
+    "rule": {
+      "id": "100125",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "616"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:48:21 UTC",
+    "rule": {
+      "id": "100129",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "685"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:49:56 UTC",
+    "rule": {
+      "id": "100133",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "665"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:51:20 UTC",
+    "rule": {
+      "id": "100137",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "460"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:52:49 UTC",
+    "rule": {
+      "id": "100141",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "612"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:54:20 UTC",
+    "rule": {
+      "id": "100146",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "742"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:55:48 UTC",
+    "rule": {
+      "id": "100150",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "700"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:57:21 UTC",
+    "rule": {
+      "id": "100154",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "803"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 08:58:53 UTC",
+    "rule": {
+      "id": "100158",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "841"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:01 UTC",
+    "rule": {
+      "id": "100162",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "21",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:03 UTC",
+    "rule": {
+      "id": "100163",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:04 UTC",
+    "rule": {
+      "id": "100164",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "80",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:05 UTC",
+    "rule": {
+      "id": "100165",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "135",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:05 UTC",
+    "rule": {
+      "id": "100166",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "139",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:06 UTC",
+    "rule": {
+      "id": "100167",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "443",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:07 UTC",
+    "rule": {
+      "id": "100168",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "445",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:09 UTC",
+    "rule": {
+      "id": "100169",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "1433",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:10 UTC",
+    "rule": {
+      "id": "100170",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "3306",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:11 UTC",
+    "rule": {
+      "id": "100171",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "3389",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:13 UTC",
+    "rule": {
+      "id": "100172",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "8080",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:13 UTC",
+    "rule": {
+      "id": "100173",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1046",
+      "mitre": {
+        "id": [
+          "T1046"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "8443",
+      "domain": "",
+      "bytes_sent": "64"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:00:29 UTC",
+    "rule": {
+      "id": "100176",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "623"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:01:55 UTC",
+    "rule": {
+      "id": "100180",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "673"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:03:21 UTC",
+    "rule": {
+      "id": "100183",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "704"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:04:57 UTC",
+    "rule": {
+      "id": "100187",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "724"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:06:19 UTC",
+    "rule": {
+      "id": "100192",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "597"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:08:07 UTC",
+    "rule": {
+      "id": "100199",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "655"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:09:43 UTC",
+    "rule": {
+      "id": "100204",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "769"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:08 UTC",
+    "rule": {
+      "id": "100206",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:16 UTC",
+    "rule": {
+      "id": "100207",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:22 UTC",
+    "rule": {
+      "id": "100208",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:28 UTC",
+    "rule": {
+      "id": "100209",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:38 UTC",
+    "rule": {
+      "id": "100211",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:43 UTC",
+    "rule": {
+      "id": "100213",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:51 UTC",
+    "rule": {
+      "id": "100214",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:10:58 UTC",
+    "rule": {
+      "id": "100216",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:04 UTC",
+    "rule": {
+      "id": "100217",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:14 UTC",
+    "rule": {
+      "id": "100218",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:22 UTC",
+    "rule": {
+      "id": "100219",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "746"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:25 UTC",
+    "rule": {
+      "id": "100220",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:29 UTC",
+    "rule": {
+      "id": "100221",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:39 UTC",
+    "rule": {
+      "id": "100223",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:11:49 UTC",
+    "rule": {
+      "id": "100225",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1110.001",
+      "mitre": {
+        "id": [
+          "T1110.001"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "22",
+      "domain": "",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:12:50 UTC",
+    "rule": {
+      "id": "100228",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "753"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:14:18 UTC",
+    "rule": {
+      "id": "100233",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "721"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:15:56 UTC",
+    "rule": {
+      "id": "100237",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "668"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:17:25 UTC",
+    "rule": {
+      "id": "100243",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "604"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:18:56 UTC",
+    "rule": {
+      "id": "100248",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "603"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:20:24 UTC",
+    "rule": {
+      "id": "100254",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "662"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:21:50 UTC",
+    "rule": {
+      "id": "100260",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "578"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:23:11 UTC",
+    "rule": {
+      "id": "100264",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "730"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:24:40 UTC",
+    "rule": {
+      "id": "100269",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "459"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:25:00 UTC",
+    "rule": {
+      "id": "100271",
+      "level": 10,
+      "description": "SIEM alert: signature detected for T1570",
+      "mitre": {
+        "id": [
+          "T1570"
+        ],
+        "tactic": [
+          "Lateral Movement"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "10.0.2.100",
+      "dstport": "445",
+      "domain": "",
+      "bytes_sent": "1850400"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:26:07 UTC",
+    "rule": {
+      "id": "100275",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "745"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:27:26 UTC",
+    "rule": {
+      "id": "100278",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "559"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:29:05 UTC",
+    "rule": {
+      "id": "100282",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "689"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:30:33 UTC",
+    "rule": {
+      "id": "100285",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "776"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:32:07 UTC",
+    "rule": {
+      "id": "100290",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "672"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:33:26 UTC",
+    "rule": {
+      "id": "100294",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "822"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:35:00 UTC",
+    "rule": {
+      "id": "100298",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "686"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:36:31 UTC",
+    "rule": {
+      "id": "100302",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "573"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:38:01 UTC",
+    "rule": {
+      "id": "100306",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "672"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:39:21 UTC",
+    "rule": {
+      "id": "100310",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "613"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:02 UTC",
+    "rule": {
+      "id": "100312",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "ea46abea8370fee4ec4d275cac41c7be.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:05 UTC",
+    "rule": {
+      "id": "100313",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "6e12416b85bca27a034913bca296f7d2.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:08 UTC",
+    "rule": {
+      "id": "100314",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "9541566d900893174d0992f2908ced73.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:11 UTC",
+    "rule": {
+      "id": "100315",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "fd4b6633db32c0f3739a17df63669180.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:16 UTC",
+    "rule": {
+      "id": "100316",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "759acbc086fa2e0227571b645f7f456e.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:19 UTC",
+    "rule": {
+      "id": "100317",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "de862b7f8ea73027271e77f871b2534d.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:24 UTC",
+    "rule": {
+      "id": "100318",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "d9a3f0c2e37154f15e1507b7a4a5097f.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:30 UTC",
+    "rule": {
+      "id": "100319",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "ec2dc4cb89143c60366af24cbee95153.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:34 UTC",
+    "rule": {
+      "id": "100320",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "6491652a18faabe8a171c4fa43698e88.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:38 UTC",
+    "rule": {
+      "id": "100321",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "7bd59c0b7cd06b5bc7c5ec31f4a6060a.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:42 UTC",
+    "rule": {
+      "id": "100323",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "6abb4d9bfac123db30723dd81c261eb7.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:44 UTC",
+    "rule": {
+      "id": "100324",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "586"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:46 UTC",
+    "rule": {
+      "id": "100325",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "0734d651d6679bf068beed300984ae19.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:50 UTC",
+    "rule": {
+      "id": "100326",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "762b7789aedb7eb66fa57f23b17227cf.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:54 UTC",
+    "rule": {
+      "id": "100327",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "38f54a2d8c51387fccc8edd910fcfcfc.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:40:59 UTC",
+    "rule": {
+      "id": "100329",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "d1882135bbc7d25d13fc0d7424b6a3c8.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:04 UTC",
+    "rule": {
+      "id": "100330",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "26eef8af7cb8156c660e29ffcef6ebdb.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:07 UTC",
+    "rule": {
+      "id": "100331",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "5de926ae9975cace186be883845a0e84.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:12 UTC",
+    "rule": {
+      "id": "100332",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "468bd481cf79053b9bfad34ad926b183.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:17 UTC",
+    "rule": {
+      "id": "100333",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "726616231a68cd9afbfb62877f88b702.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:22 UTC",
+    "rule": {
+      "id": "100334",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "e1d1548145402c6e442b081074756dd2.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:24 UTC",
+    "rule": {
+      "id": "100335",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "aca2b1996e50a74120ac4aa1f8cf8c80.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:29 UTC",
+    "rule": {
+      "id": "100336",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "8f43dd918597e520861f842c2fa0f2b4.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:31 UTC",
+    "rule": {
+      "id": "100337",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "2e4fe039388f45810ae0891ca297d8c2.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:35 UTC",
+    "rule": {
+      "id": "100338",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "23ff80df9a20e44afd3d42811bdbfe38.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:41:41 UTC",
+    "rule": {
+      "id": "100340",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.004",
+      "mitre": {
+        "id": [
+          "T1071.004"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "203.0.113.52",
+      "dstport": "53",
+      "domain": "efafb4a53f5e2e90028b761ea8ed71f6.auth-sync-token.com",
+      "bytes_sent": "512"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:42:05 UTC",
+    "rule": {
+      "id": "100342",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "780"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:43:35 UTC",
+    "rule": {
+      "id": "100346",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "657"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:45:13 UTC",
+    "rule": {
+      "id": "100351",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "508"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:46:44 UTC",
+    "rule": {
+      "id": "100356",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "608"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:48:18 UTC",
+    "rule": {
+      "id": "100360",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "698"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:49:55 UTC",
+    "rule": {
+      "id": "100364",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "468"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:51:24 UTC",
+    "rule": {
+      "id": "100370",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "531"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:52:57 UTC",
+    "rule": {
+      "id": "100375",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "592"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:54:31 UTC",
+    "rule": {
+      "id": "100380",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "731"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:55:59 UTC",
+    "rule": {
+      "id": "100384",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "819"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:57:28 UTC",
+    "rule": {
+      "id": "100388",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "850"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 09:59:10 UTC",
+    "rule": {
+      "id": "100395",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "610"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:00:44 UTC",
+    "rule": {
+      "id": "100398",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "602"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:02:19 UTC",
+    "rule": {
+      "id": "100403",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "636"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:03:45 UTC",
+    "rule": {
+      "id": "100407",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "786"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:05:06 UTC",
+    "rule": {
+      "id": "100413",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "521"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:06:43 UTC",
+    "rule": {
+      "id": "100417",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "507"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:08:12 UTC",
+    "rule": {
+      "id": "100421",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "717"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:09:28 UTC",
+    "rule": {
+      "id": "100425",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "747"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:10:00 UTC",
+    "rule": {
+      "id": "100427",
+      "level": 10,
+      "description": "SIEM alert: signature detected for T1048",
+      "mitre": {
+        "id": [
+          "T1048"
+        ],
+        "tactic": [
+          "Exfiltration"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.88",
+      "dstport": "443",
+      "domain": "storage-sync-gateway.org",
+      "bytes_sent": "25690112"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:11:02 UTC",
+    "rule": {
+      "id": "100430",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "496"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:12:31 UTC",
+    "rule": {
+      "id": "100434",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "757"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:14:01 UTC",
+    "rule": {
+      "id": "100439",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "749"
+    }
+  },
+  {
+    "timestamp": "2026-11-10 10:15:26 UTC",
+    "rule": {
+      "id": "100442",
+      "level": 7,
+      "description": "SIEM alert: signature detected for T1071.001",
+      "mitre": {
+        "id": [
+          "T1071.001"
+        ],
+        "tactic": [
+          "Command and Control"
+        ]
+      }
+    },
+    "agent": {
+      "id": "002",
+      "name": "WS-FINANCE-04",
+      "ip": "10.0.1.25"
+    },
+    "data": {
+      "srcip": "10.0.1.25",
+      "dstip": "198.51.100.77",
+      "dstport": "443",
+      "domain": "cdn-security-check.net",
+      "bytes_sent": "649"
+    }
+  }
+]

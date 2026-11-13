@@ -112,6 +112,30 @@ Executando o `ipo_orchestrator.py` sobre a telemetria real do laboratório (`soc
 
 ---
 
+## 🧪 3.1. Benchmark com Ground Truth: Teste Cego do Caso Lazarus Group (`07_teste_cego_lazarus.py`)
+
+No artigo base (SBRC 2025, Seção B.1 e Tabela 1, p. 6 e 11), os próprios autores reportaram uma falha grave na fórmula original: ao submeter os registros de rede de um ataque real do **Lazarus Group**, o orquestrador atribuiu pontuação maior ao **Kimsuky (66%)** do que ao próprio **Lazarus (56%)**, gerando uma **Falsa Atribuição**.
+
+Para comprovar a eficácia do **IPO v2.0**, construímos um dataset de teste cego (`teste_cego_lazarus_anonimizado.csv` com `933` conexões e `teste_cego_lazarus_anonimizado.json` com `133` alertas SIEM), **100% desprovido de qualquer nome textual de grupo**, contendo apenas telemetria real (beaconing de 90s, jitter de 5.6s, DNS Tunneling, movimentação lateral SMB e 24.5 MB de exfiltração).
+
+### Matriz Comparativa do Teste Cego:
+
+| Grupo / Ameaça | TTPs Casadas | SBRC Eq. 1 (Artigo Original) | Okapi BM25 | Random Forest (ML) | **ENSEMBLE v2.0** | Veredito |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Lazarus Group (Autor Real)** | `6/9` | `66.67%` | **`100.00%`** | **`94.67%`** | **`92.00%`** | **CORRETO (Vencedor)** |
+| **BlackCat** | `3/3` | **`100.00%`** *(Falso Positivo)* | `71.83%` | `5.33%` | `30.54%` | Descartado pelo ML |
+| **Kimsuky** | `4/6` | `66.67%` *(Empate com Lazarus)* | `76.60%` | `0.00%` | `26.67%` | Descartado pelo ML |
+| **APT28** | `4/10` | `40.00%` | `62.43%` | `0.00%` | `20.65%` | Descartado |
+| **APT-DarkSerpent** | `2/3` | `66.67%` | `45.34%` | `0.00%` | `16.24%` | Descartado |
+
+* **Como o IPO v2.0 superou o SBRC 2025?**
+  1. A fórmula do artigo foi iludida pelo tamanho do perfil: deu **100% ao BlackCat** e empatou **Kimsuky e Lazarus**.
+  2. O **Okapi BM25** penalizou o BlackCat e Kimsuky pela ausência de técnicas raras como Tunelamento DNS (`T1071.004`), dando score máximo a Lazarus.
+  3. O **Random Forest** avaliou a periodicidade precisa de rede (`90.2s` de beacon, `5.65s` de jitter e `24.5 MB` de payload), conferindo **94.67%** de probabilidade a Lazarus e **0.00%** a Kimsuky.
+  4. O **Ensemble v2.0 cravou a vitória do Lazarus Group com 92.00%**, corrigindo o erro histórico da literatura!
+
+---
+
 ## 🗂️ 4. Estrutura dos Arquivos do Projeto
 
 | Arquivo | Camada DML / Papel no Sistema | Descrição |

@@ -329,7 +329,7 @@
                 <!-- Botões de Atalho para Datasets Já Existentes no Projeto -->
                 <div class="pt-2">
                     <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Ou alterne entre datasets já disponíveis no projeto:</p>
-                    <div class="grid grid-cols-2 gap-2.5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         <button type="button" onclick="selectPreset('soc_network_telemetry.csv', 'csv_network')" class="text-left p-3 rounded-xl bg-dark-base hover:bg-dark-cardHover border border-dark-border text-xs transition">
                             <span class="font-bold text-white block">📡 Telemetria SOC (CSV)</span>
                             <span class="text-[11px] text-slate-400">2.008 conexões de rede</span>
@@ -337,6 +337,14 @@
                         <button type="button" onclick="selectPreset('wazuh_alerts_hf.json', 'json_wazuh')" class="text-left p-3 rounded-xl bg-dark-base hover:bg-dark-cardHover border border-dark-border text-xs transition">
                             <span class="font-bold text-white block">🛡️ Alertas Wazuh (JSON)</span>
                             <span class="text-[11px] text-slate-400">738 alertas reais SIEM/XDR</span>
+                        </button>
+                        <button type="button" onclick="selectPreset('teste_cego_lazarus_anonimizado.csv', 'csv_network')" class="text-left p-3 rounded-xl bg-blue-950/40 hover:bg-blue-900/50 border border-blue-500/40 text-xs transition">
+                            <span class="font-bold text-blue-300 block">🧪 Teste Cego Lazarus (CSV)</span>
+                            <span class="text-[11px] text-slate-300">933 conexões • Ground Truth SBRC</span>
+                        </button>
+                        <button type="button" onclick="selectPreset('teste_cego_lazarus_anonimizado.json', 'json_wazuh')" class="text-left p-3 rounded-xl bg-blue-950/40 hover:bg-blue-900/50 border border-blue-500/40 text-xs transition">
+                            <span class="font-bold text-blue-300 block">🎯 SIEM Alertas Lazarus (JSON)</span>
+                            <span class="text-[11px] text-slate-300">133 alertas de detecção</span>
                         </button>
                     </div>
                 </div>
