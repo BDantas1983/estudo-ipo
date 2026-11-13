@@ -209,6 +209,57 @@
                 </span>
             </div>
 
+            <!-- WIDGET DE HEALTH SCORE DA INFRAESTRUTURA -->
+            <div class="bg-dark-base/85 p-5 rounded-2xl border border-dark-border mb-5 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-inner">
+                <div class="flex items-center space-x-5 w-full lg:w-auto">
+                    <!-- Gauge Circular de Saúde -->
+                    <div class="relative w-20 h-20 flex items-center justify-center shrink-0">
+                        <svg class="w-20 h-20 -rotate-90">
+                            <circle cx="40" cy="40" r="34" stroke="currentColor" stroke-width="7" class="text-slate-800" fill="transparent"/>
+                            <circle id="health-ring" cx="40" cy="40" r="34" stroke="currentColor" stroke-width="7" class="text-red-500 transition-all duration-700 ease-out" fill="transparent" stroke-dasharray="213.6" stroke-dashoffset="180"/>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span class="font-mono font-black text-lg text-white tracking-tight" id="health-score-val">12%</span>
+                            <span class="text-[8px] uppercase font-bold text-slate-400 -mt-1">Saúde</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Health Score Corporativo</span>
+                            <span id="health-badge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono bg-red-500/20 text-red-300 border border-red-500/30">Crítico / Comprometido</span>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1 leading-relaxed" id="health-desc">
+                            Ambiente sob ameaça ativa. Marque as ações abaixo para isolar o vetor e recuperar a integridade da infraestrutura.
+                        </p>
+                        <div class="flex items-center space-x-3 text-xs text-slate-400 mt-2 font-mono">
+                            <span>Ações Concluídas: <b id="health-progress-count" class="text-emerald-400">0 de 5</b></span>
+                            <span>•</span>
+                            <span>Recuperação: <b id="health-gain-val" class="text-emerald-400">+0%</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Pilares de Postura de Segurança (NIST / CIS Controls) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full lg:w-auto shrink-0">
+                    <div class="bg-dark-card/90 p-2.5 rounded-xl border border-dark-border text-center min-w-[100px]">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Endpoints</p>
+                        <p class="text-xs font-mono font-bold text-red-400 mt-1" id="posture-endpoints">Exposto</p>
+                    </div>
+                    <div class="bg-dark-card/90 p-2.5 rounded-xl border border-dark-border text-center min-w-[100px]">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Perímetro</p>
+                        <p class="text-xs font-mono font-bold text-amber-400 mt-1" id="posture-network">Vazando</p>
+                    </div>
+                    <div class="bg-dark-card/90 p-2.5 rounded-xl border border-dark-border text-center min-w-[100px]">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Identidade</p>
+                        <p class="text-xs font-mono font-bold text-amber-400 mt-1" id="posture-identity">Em Risco</p>
+                    </div>
+                    <div class="bg-dark-card/90 p-2.5 rounded-xl border border-dark-border text-center min-w-[100px]">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Custódia</p>
+                        <p class="text-xs font-mono font-bold text-blue-400 mt-1" id="posture-forensics">Pendente</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="space-y-3" id="analyst-checklist-container">
                 <!-- Renderizado dinamicamente com checkboxes -->
             </div>
@@ -520,6 +571,112 @@
                 desc.classList.remove('text-slate-600');
                 parent.classList.remove('bg-emerald-950/25', 'border-emerald-500/40');
             }
+            updateHealthScoreUI();
+        }
+
+        function updateHealthScoreUI() {
+            if (!window.currentAdvisory) return;
+            const adv = window.currentAdvisory;
+            const hs = adv.health_score || {};
+            const initialHealth = hs.initial !== undefined ? hs.initial : 15;
+            const totalItems = (adv.analyst_checklist && adv.analyst_checklist.length) || 5;
+
+            const checkboxes = document.querySelectorAll('#analyst-checklist-container input[type="checkbox"]');
+            let sumGained = 0;
+            let checkedCount = 0;
+            const checkedCategories = new Set();
+
+            checkboxes.forEach(chk => {
+                if (chk.checked) {
+                    checkedCount++;
+                    const w = parseInt(chk.getAttribute('data-weight') || 20);
+                    sumGained += w;
+                    const cat = chk.getAttribute('data-category');
+                    if (cat) checkedCategories.add(cat);
+                }
+            });
+
+            const currentHealth = Math.min(100, initialHealth + sumGained);
+
+            // Atualizar Anel e Valores
+            const ring = document.getElementById('health-ring');
+            const scoreVal = document.getElementById('health-score-val');
+            const badge = document.getElementById('health-badge');
+            const desc = document.getElementById('health-desc');
+            const progressCount = document.getElementById('health-progress-count');
+            const gainVal = document.getElementById('health-gain-val');
+
+            // Circumference do circulo r=34 é 213.6
+            const offset = 213.6 - (currentHealth / 100.0) * 213.6;
+            ring.style.strokeDashoffset = offset;
+
+            scoreVal.textContent = currentHealth + '%';
+            progressCount.textContent = `${checkedCount} de ${totalItems}`;
+            gainVal.textContent = `+${sumGained}%`;
+
+            // Estilos dinâmicos de cor
+            if (currentHealth >= 100) {
+                ring.setAttribute('class', 'text-emerald-400 transition-all duration-700 ease-out');
+                scoreVal.className = "font-mono font-black text-lg text-emerald-400 tracking-tight";
+                badge.className = "text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+                badge.textContent = "🟢 Totalmente Seguro / Ameaça Contida";
+                desc.textContent = "Excelente! Todas as ações prioritárias foram executadas. O vetor de ataque foi neutralizado e a integridade da infraestrutura foi restabelecida.";
+            } else if (currentHealth >= 70) {
+                ring.setAttribute('class', 'text-teal-400 transition-all duration-700 ease-out');
+                scoreVal.className = "font-mono font-black text-lg text-teal-400 tracking-tight";
+                badge.className = "text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30";
+                badge.textContent = "🔵 Contenção Avançada";
+                desc.textContent = "Ameaça neutralizada nos vetores críticos. Conclua as etapas finais de auditoria e preservação de evidências para atingir 100%.";
+            } else if (currentHealth >= 40) {
+                ring.setAttribute('class', 'text-amber-400 transition-all duration-700 ease-out');
+                scoreVal.className = "font-mono font-black text-lg text-amber-400 tracking-tight";
+                badge.className = "text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30";
+                badge.textContent = "🟡 Parcialmente Contido";
+                desc.textContent = "Primeiras medidas de isolamento executadas. Prossiga com o bloqueio de rede e revogação de credenciais.";
+            } else {
+                ring.setAttribute('class', 'text-red-500 transition-all duration-700 ease-out');
+                scoreVal.className = "font-mono font-black text-lg text-red-400 tracking-tight";
+                badge.className = "text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono bg-red-500/20 text-red-300 border border-red-500/30";
+                badge.textContent = "🔴 Crítico / Comprometido";
+                desc.textContent = "Ambiente sob ameaça ativa. Execute as ações abaixo para isolar o vetor e recuperar a integridade da infraestrutura.";
+            }
+
+            // Posturas Individuais
+            const elEndpoints = document.getElementById('posture-endpoints');
+            if (checkedCategories.has('endpoints')) {
+                elEndpoints.textContent = "Isolado [✓]";
+                elEndpoints.className = "text-xs font-mono font-bold text-emerald-400 mt-1";
+            } else {
+                elEndpoints.textContent = "Exposto";
+                elEndpoints.className = "text-xs font-mono font-bold text-red-400 mt-1";
+            }
+
+            const elNetwork = document.getElementById('posture-network');
+            if (checkedCategories.has('network')) {
+                elNetwork.textContent = "Bloqueado [✓]";
+                elNetwork.className = "text-xs font-mono font-bold text-emerald-400 mt-1";
+            } else {
+                elNetwork.textContent = "Vazando";
+                elNetwork.className = "text-xs font-mono font-bold text-amber-400 mt-1";
+            }
+
+            const elIdentity = document.getElementById('posture-identity');
+            if (checkedCategories.has('identity')) {
+                elIdentity.textContent = "Protegida [✓]";
+                elIdentity.className = "text-xs font-mono font-bold text-emerald-400 mt-1";
+            } else {
+                elIdentity.textContent = "Em Risco";
+                elIdentity.className = "text-xs font-mono font-bold text-amber-400 mt-1";
+            }
+
+            const elForensics = document.getElementById('posture-forensics');
+            if (checkedCategories.has('forensics')) {
+                elForensics.textContent = "Preservada [✓]";
+                elForensics.className = "text-xs font-mono font-bold text-emerald-400 mt-1";
+            } else {
+                elForensics.textContent = "Pendente";
+                elForensics.className = "text-xs font-mono font-bold text-blue-400 mt-1";
+            }
         }
 
         // Carregamento dos Dados do Dashboard
@@ -529,6 +686,7 @@
                 const ranking = data.ranking;
                 const winner = ranking[0];
                 const adv = data.incident_advisory;
+                window.currentAdvisory = adv;
 
                 // Atualizar Nome do Dataset
                 document.getElementById('active-dataset-name').textContent = data.dataset_info.name;
@@ -584,24 +742,28 @@
                         kcContainer.appendChild(card);
                     });
 
-                    // Checklist do Analista
+                    // Checklist do Analista com Pesos de Saúde
                     const chkContainer = document.getElementById('analyst-checklist-container');
                     chkContainer.innerHTML = '';
                     adv.analyst_checklist.forEach(item => {
                         const row = document.createElement('label');
                         row.className = "flex items-start space-x-3.5 p-3.5 rounded-xl bg-dark-base/70 border border-dark-border hover:border-emerald-500/40 transition cursor-pointer select-none";
                         row.innerHTML = `
-                            <input type="checkbox" onchange="toggleCheck(this)" class="w-5 h-5 rounded cursor-pointer mt-0.5 accent-emerald-500 shrink-0">
+                            <input type="checkbox" onchange="toggleCheck(this)" data-weight="${item.weight}" data-category="${item.category}" class="w-5 h-5 rounded cursor-pointer mt-0.5 accent-emerald-500 shrink-0">
                             <div class="flex-1 text-xs sm:text-sm">
                                 <div class="flex items-center space-x-2">
                                     <span class="text-[10px] font-bold px-2 py-0.5 rounded font-mono ${item.priority_color === 'red' ? 'bg-red-500/20 text-red-300' : 'bg-amber-500/20 text-amber-300'}">${item.priority}</span>
                                     <span class="font-bold text-white item-title">${item.action}</span>
+                                    <span class="text-[11px] font-mono text-emerald-400 font-bold ml-auto">+${item.weight}% Saúde</span>
                                 </div>
                                 <p class="text-slate-400 text-xs mt-1 leading-relaxed item-desc">${item.description}</p>
                             </div>
                         `;
                         chkContainer.appendChild(row);
                     });
+
+                    // Atualizar Health Score Inicial
+                    updateHealthScoreUI();
                 }
 
                 // Métricas Rápidas
