@@ -1069,4 +1069,6 @@ def run_dashboard_server(port=8080):
 
 
 if __name__ == "__main__":
-    run_dashboard_server(8080)
+    # Render define a porta através da variável de ambiente PORT (padrão 10000 ou 8080)
+    port = int(os.environ.get("PORT", 8080))
+    run_dashboard_server(port)

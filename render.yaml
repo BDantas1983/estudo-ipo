@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: estudo-ipo
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python ipo_dashboard.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
